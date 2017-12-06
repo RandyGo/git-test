@@ -1,4 +1,3 @@
 git revert
 
-git revert --abort
-
+git revert --abort     give up revert
