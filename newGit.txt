@@ -1,6 +1,6 @@
-1.初始导入
+1.start import
 
-2.创建project.js
+2.create project.js
 
 3.修改project
 
