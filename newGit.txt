@@ -1,9 +1,11 @@
-1.start import
+1.初始导入
 
-2.create project.js
+2.创建project.js
 
-3.fix project
+3.修改project
 
 4.go on fix
 
 5.still go on
+
+
