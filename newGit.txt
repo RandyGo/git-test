@@ -2,7 +2,7 @@
 
 2.create project.js
 
-3.ÐÞ¸Äproject
+3.fix project
 
 4.go on fix
 
