@@ -1,1 +1,8 @@
 git reset
+
+
+git reset --hard
+
+git reset <commit>
+
+git reset --hard <commit>
