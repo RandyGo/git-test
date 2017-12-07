@@ -2,5 +2,4 @@ git revert
 
 git revert --abort     give up revert
 
-
 git revert <commit>
