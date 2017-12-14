@@ -1,6 +1,5 @@
 git reset
 
-
 git reset --hard
 
 git reset <commit>
