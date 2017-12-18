@@ -17,3 +17,7 @@ git rebase --continue
 git rebase --skip
 
 add rebase command
+
+git rebase --abort
+
+add rebase --abort
