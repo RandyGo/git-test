@@ -143,3 +143,22 @@ git commit --amend -m "new commit message"  修改提交信息
 
 git rebase
 变基（rebase）是将分支移到一个新的基提交的过程
+
+用法：
+git rebase <base>
+将当前分支 rebase 到 <base>，这里可以是任何类型的提交引用（ID、分支名、标签，或是 HEAD 的相对引用）。
+
+
+rebase的主要目的是为了保持一个线性的项目历史。比如说，当你在 feature 分支工作时 master 分支取得了一些进展，要将你的 feature 分支整合进 master 分支，你有两个选择：直接 merge，或者先 rebase 后 merge。前者会产生一个三路合并（3-way merge）和一个合并提交，而后者产生的是一个快速向前的合并以及完美的线性历史。
+
+rebase 是将上游更改合并进本地仓库的通常方法。你每次想查看上游进展时，用 git merge 拉取上游更新会导致一个多余的合并提交。
+
+注意：不要rebase公共历史，rebase 会用新的提交替换旧的提交，你的项目历史会像突然消失了一样。
+
+
+git rebase -i
+用 -i 标记运行 git rebase 开始交互式 rebase。交互式 rebase 给你在过程中修改单个提交的机会，而不是盲目地将所有提交都移到新的基上。你可以移除、分割提交，更改提交的顺序。它就像是打了鸡血的 git commit --amend 一样。
+
+用法
+git rebase -i <base>
+将当前分支 rebase 到 base，但使用可交互的形式。它会打开一个编辑器，你可以为每个将要 rebase 的提交输入命令。这些命令决定了每个提交将会怎样被转移到新的基上去。你还可以对这些提交进行排序。
