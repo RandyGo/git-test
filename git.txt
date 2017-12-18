@@ -162,3 +162,28 @@ git rebase -i
 用法
 git rebase -i <base>
 将当前分支 rebase 到 base，但使用可交互的形式。它会打开一个编辑器，你可以为每个将要 rebase 的提交输入命令。这些命令决定了每个提交将会怎样被转移到新的基上去。你还可以对这些提交进行排序。
+
+
+git reflog
+Git 用引用日志这种机制来记录分支顶端的更新。它允许你回到那些不被任何分支或标签引用的更改。在重写历史后，引用日志包含了分支旧状态的信息，有需要的话你可以回到这个状态。
+
+用法
+git reflog
+显示本地仓库的引用日志。
+
+git reflog --relative-date
+用相对的日期显示引用日志。(如 2 周前）。
+
+讨论
+每次当前的 HEAD 更新时（如切换分支、拉取新更改、重写历史或只是添加新的提交），引用日志都会添加一个新条目。
+
+为了理解 git reflog，我们来看一个例子：
+
+0a2e358 HEAD@{0}: reset: moving to HEAD~2
+0254ea7 HEAD@{1}: checkout: moving from 2.2 to master
+c10f740 HEAD@{2}: checkout: moving from master to 2.2
+上面的引用日志显示了 master 和 2.2 的 branch 之间的相互切换。还有对一个更老的提交的强制重设。最近的活动用 HEAD@{0} 标记在上方显示。
+
+如果事实上你是不小心切换回去的，引用日志包含了你意外地丢掉两个提交之前 master 指向的提交 0254ea7。
+
+git reset --hard 0254ea7
