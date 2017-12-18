@@ -11,3 +11,9 @@ git reset
 git rebase
 
 git rebase --abort
+
+git rebase --continue
+
+git rebase --skip
+
+add rebase command
