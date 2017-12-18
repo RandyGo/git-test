@@ -5,3 +5,6 @@ git commit --amend --no-edit  修复提交，但不修改提交信息
 git commit --amend -m "new commit message"  修改提交信息
 
 以上前提是还没有push到仓库当中，只在本地提交
+
+
+git reabse
