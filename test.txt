@@ -25,3 +25,5 @@ add rebase --abort
 add git rebase txt
 
 git rebase -i
+
+git reflog
